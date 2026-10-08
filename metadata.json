@@ -1,0 +1,8 @@
+{
+  "name": "Shark Tank Simulator",
+  "description": "Face the Panel. No Politeness. Pure Truth. AI-powered Shark Tank simulator with 4 ruthless investor personas.",
+  "permissions": [],
+  "capabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

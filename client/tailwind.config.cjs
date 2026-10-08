@@ -1,8 +1,10 @@
-/** @type {import('tailwindcss').Config} */
-const colors = require('tailwindcss/colors');
-
 module.exports = {
-  content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
+  content: [
+    './index.html',
+    './src/**/*.{js,ts,jsx,tsx}',
+    './client/index.html',
+    './client/src/**/*.{js,ts,jsx,tsx}',
+  ],
   darkMode: 'class',
   theme: {
     extend: {
@@ -11,14 +13,10 @@ module.exports = {
         mono: ['JetBrains Mono', 'monospace'],
       },
       colors: {
-        // Extend zinc with a near-pure-white step for dark mode text
         zinc: {
-          ...colors.zinc,
           150: '#f5f5f5',
         },
-        // Orange is the primary brand accent across both themes
         orange: {
-          ...colors.orange,
           50: '#fff7ed',
           100: '#ffedd5',
           200: '#fed7aa',

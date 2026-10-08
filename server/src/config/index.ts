@@ -12,7 +12,7 @@ function requireEnv(key: string, fallback?: string): string {
 }
 
 export const config = {
-  port: parseInt(process.env['PORT'] ?? '3001', 10),
+  port: 3000,
   nodeEnv: process.env['NODE_ENV'] ?? 'development',
   isDev: (process.env['NODE_ENV'] ?? 'development') === 'development',
 
@@ -26,7 +26,7 @@ export const config = {
   },
 
   cors: {
-    origin: process.env['CORS_ORIGIN'] ?? 'http://localhost:5173',
+    origin: process.env['CORS_ORIGIN'] ?? '*',
   },
 
   rateLimit: {

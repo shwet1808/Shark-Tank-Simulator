@@ -10,7 +10,7 @@ import { analyzePitch, computeOverallScore, analyzeValuation } from '../services
 import { SharkId, SharkMessage, SessionState, FinalDeal } from '../types/index.js';
 import { v4 as uuidv4 } from 'uuid';
 
-const router = Router();
+const router: Router = Router();
 const SHARK_ORDER: SharkId[] = ['vikram', 'alya', 'kabir', 'devika'];
 
 function setSSEHeaders(res: Response): void {

@@ -7,10 +7,18 @@ import { errorHandler, notFound, requestLogger } from './middleware/errorHandler
 import pitchRouter from './routes/pitch.js';
 import sessionRouter from './routes/session.js';
 
-const app = express();
+const app: express.Express = express();
 
 // Security & parsing
-app.use(helmet({ crossOriginEmbedderPolicy: false }));
+app.use(
+  helmet({
+    contentSecurityPolicy: false,
+    crossOriginEmbedderPolicy: false,
+    crossOriginOpenerPolicy: false,
+    crossOriginResourcePolicy: false,
+    frameguard: false,
+  })
+);
 app.use(cors({ origin: config.cors.origin, credentials: true }));
 app.use(express.json({ limit: '2mb' }));
 app.use(express.urlencoded({ extended: true }));
@@ -42,8 +50,8 @@ app.use(notFound);
 app.use(errorHandler);
 
 // Start server
-app.listen(config.port, () => {
-  console.log(`🦈 Shark Tank Server running on http://localhost:${config.port}`);
+app.listen(config.port, '0.0.0.0', () => {
+  console.log(`🦈 Shark Tank Server running on http://0.0.0.0:${config.port}`);
   console.log(`   Environment: ${config.nodeEnv}`);
   console.log(`   AI Model: ${config.ai.model}`);
 });

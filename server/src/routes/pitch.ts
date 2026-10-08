@@ -5,7 +5,7 @@ import { sessionStore } from '../services/sessionStore.js';
 import { analyzePitch, computeOverallScore } from '../services/pitchAnalyzer.js';
 import { StartupPitch, SessionState } from '../types/index.js';
 
-const router = Router();
+const router: Router = Router();
 
 // POST /api/pitch/submit — Structured form submission
 router.post('/submit', async (req: Request, res: Response, next: NextFunction) => {

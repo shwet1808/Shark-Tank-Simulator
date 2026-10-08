@@ -1,4 +1,5 @@
 import OpenAI from 'openai';
+import { GoogleGenAI } from '@google/genai';
 import { config } from '../config/index.js';
 
 export type AIChatParams = {
@@ -7,8 +8,28 @@ export type AIChatParams = {
   temperature?: number;
 };
 
-// Call Gemini API via Google's REST interface
-async function callGemini(params: AIChatParams, apiKey: string, model: string): Promise<string> {
+let genAIClient: GoogleGenAI | null = null;
+function getGenAI(): GoogleGenAI | null {
+  const geminiKey = process.env['GEMINI_API_KEY'] || config.ai.geminiKey;
+  if (!geminiKey || geminiKey.trim().length === 0) return null;
+  if (!genAIClient) {
+    genAIClient = new GoogleGenAI({
+      apiKey: geminiKey,
+      httpOptions: {
+        headers: {
+          'User-Agent': 'aistudio-build',
+        },
+      },
+    });
+  }
+  return genAIClient;
+}
+
+// Call Gemini API via @google/genai SDK
+async function callGemini(params: AIChatParams): Promise<string> {
+  const ai = getGenAI();
+  if (!ai) throw new Error('No Gemini API key configured');
+
   const systemMsg = params.messages.find((m) => m.role === 'system');
   const chatMessages = params.messages.filter((m) => m.role !== 'system');
 
@@ -17,44 +38,17 @@ async function callGemini(params: AIChatParams, apiKey: string, model: string): 
     parts: [{ text: m.content }],
   }));
 
-  const body: Record<string, unknown> = {
-    contents,
-    generationConfig: {
+  const response = await ai.models.generateContent({
+    model: 'gemini-3.8-flash',
+    contents: contents.length > 0 ? contents : [{ role: 'user', parts: [{ text: 'Hello' }] }],
+    config: {
+      systemInstruction: systemMsg?.content,
       temperature: params.temperature ?? 0.7,
       maxOutputTokens: params.max_tokens ?? 250,
     },
-  };
-
-  if (systemMsg) {
-    body['systemInstruction'] = {
-      parts: [{ text: systemMsg.content }],
-    };
-  }
-
-  const cleanModel = model.replace(/^models\//, '');
-  const url = `https://generativelanguage.googleapis.com/v1beta/models/${cleanModel}:generateContent?key=${apiKey}`;
-
-  const res = await fetch(url, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify(body),
   });
 
-  if (!res.ok) {
-    const errorText = await res.text();
-    throw new Error(`Gemini HTTP ${res.status}: ${errorText}`);
-  }
-
-  const data = (await res.json()) as {
-    candidates?: Array<{ content?: { parts?: Array<{ text?: string }> } }>;
-    error?: { message?: string };
-  };
-
-  if (data.error) {
-    throw new Error(data.error.message ?? 'Gemini API returned an error');
-  }
-
-  const text = data.candidates?.[0]?.content?.parts?.[0]?.text?.trim();
+  const text = response.text?.trim();
   if (!text) {
     throw new Error('Gemini returned empty candidate response');
   }
@@ -63,18 +57,14 @@ async function callGemini(params: AIChatParams, apiKey: string, model: string): 
 }
 
 export async function createChatCompletion(params: AIChatParams): Promise<string> {
-  // Strategy 1: Google Gemini (Free Tier / high quota)
+  // Strategy 1: Google Gemini via @google/genai
   const geminiKey = process.env['GEMINI_API_KEY'] || config.ai.geminiKey;
-  if (geminiKey && geminiKey.length > 10) {
-    // Try flash-lite-latest first, then flash-latest
-    const candidateModels = ['gemini-flash-lite-latest', 'gemini-flash-latest'];
-    for (const model of candidateModels) {
-      try {
-        const result = await callGemini(params, geminiKey, model);
-        return result;
-      } catch (err: any) {
-        console.warn(`[AI Router] Gemini (${model}) failed: ${err?.message || err}. Trying next...`);
-      }
+  if (geminiKey && geminiKey.length > 5) {
+    try {
+      const result = await callGemini(params);
+      return result;
+    } catch (err: any) {
+      console.warn(`[AI Router] Gemini failed: ${err?.message || err}. Trying next...`);
     }
   }
 
