@@ -5,6 +5,7 @@ import SharkCard from '../components/SharkCard';
 import ChatStream from '../components/ChatStream';
 import PhaseIndicator from '../components/PhaseIndicator';
 import DealResolution from '../components/DealResolution';
+import DealCelebration from '../components/DealCelebration';
 import { SharkId } from '../types/index';
 import { AlertCircle, ChevronLeft, Radio, CheckCircle2, LayoutList } from 'lucide-react';
 import { useState } from 'react';
@@ -63,6 +64,14 @@ export default function TankPage() {
             </div>
           </div>
         </div>
+      )}
+
+      {/* Congratulatory animation and modal for winning a deal */}
+      {finalDeal && finalDeal.status === 'deal' && !isStreaming && (
+        <DealCelebration
+          deal={finalDeal}
+          onViewReport={() => setView('report')}
+        />
       )}
 
       {/* Top bar */}

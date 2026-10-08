@@ -293,9 +293,12 @@ export async function generateBusinessReview(session: SessionState): Promise<Bus
   const prompt = `Generate a JSON business review for ${session.pitch.companyName}.
 Format (pure JSON only, no markdown):
 {
+  "summary": "2-sentence executive summary",
+  "estimatedValue": number,
+  "valuationReasoning": "1-sentence valuation rationale",
   "strengths": ["3 key strengths"],
-  "weaknesses": ["3 key weaknesses"],
-  "actionItems": ["3 specific recommendations for the founder"]
+  "improvements": ["3 key improvements"],
+  "nextSteps": ["3 specific next steps for the founder"]
 }
 Pitch Details:
 ${buildPitchContext(session.pitch)}`;
@@ -303,50 +306,84 @@ ${buildPitchContext(session.pitch)}`;
   try {
     const res = await createChatCompletion({
       messages: [{ role: 'user', content: prompt }],
-      max_tokens: 250,
+      max_tokens: 300,
       temperature: 0.6,
     });
     const match = res.match(/\{[\s\S]*\}/);
-    if (match) return JSON.parse(match[0]) as BusinessReview;
+    if (match) {
+      const parsed = JSON.parse(match[0]);
+      const strengths = Array.isArray(parsed.strengths) ? parsed.strengths : [];
+      const improvements = Array.isArray(parsed.improvements) ? parsed.improvements : (Array.isArray(parsed.weaknesses) ? parsed.weaknesses : []);
+      const weaknesses = Array.isArray(parsed.weaknesses) ? parsed.weaknesses : improvements;
+      const nextSteps = Array.isArray(parsed.nextSteps) ? parsed.nextSteps : (Array.isArray(parsed.actionItems) ? parsed.actionItems : []);
+      const actionItems = Array.isArray(parsed.actionItems) ? parsed.actionItems : nextSteps;
+
+      return {
+        summary: parsed.summary || `${session.pitch.companyName} review`,
+        estimatedValue: typeof parsed.estimatedValue === 'number' ? parsed.estimatedValue : session.pitch.impliedValuation,
+        valuationReasoning: parsed.valuationReasoning || 'Valuation based on current metrics',
+        strengths,
+        improvements,
+        weaknesses,
+        nextSteps,
+        actionItems,
+      };
+    }
   } catch {
     // Fallback
   }
 
   if (isStrong) {
+    const improvements = [
+      'Accelerate sales team recruitment with quota-bearing account executives',
+      'Establish automated customer onboarding to protect current gross margins',
+      'Prepare enterprise security certifications to expand corporate accounts',
+    ];
+    const nextSteps = [
+      'Deploy capital into regional enterprise distribution channels',
+      'Secure multi-year customer commitments with upfront annual invoicing',
+      'Expand product moat with continuous data telemetry feedback loops',
+    ];
+
     return {
+      summary: `${session.pitch.companyName} demonstrates high-margin operating leverage with proven product-market fit and defensible intellectual property.`,
+      estimatedValue: session.pitch.impliedValuation,
+      valuationReasoning: `Valuation is substantiated by strong unit economics (healthy LTV:CAC and gross margins exceeding 60%).`,
       strengths: [
         'Superior unit economics with high gross margins and healthy LTV:CAC',
         'Demonstrated traction with verifiable customer demand and low churn',
         'Credible founding team with proven domain expertise and technical depth',
       ],
-      weaknesses: [
-        'Aggressive capital deployment could pressure short-term operational efficiency',
-        'Enterprise sales cycles require sustained pipeline and longer cash conversion',
-        'Need to reinforce intellectual property protection in secondary markets',
-      ],
-      actionItems: [
-        'Accelerate sales team recruitment with quota-bearing account executives',
-        'Establish automated customer onboarding to protect current gross margins',
-        'Prepare enterprise security certifications to expand government and corporate accounts',
-      ],
+      improvements,
+      weaknesses: improvements,
+      nextSteps,
+      actionItems: nextSteps,
     };
   }
 
+  const badImprovements = [
+    'Unsubstantiated valuation disconnected from current revenue and traction metrics',
+    'Lacks verifiable unit economics (CAC, LTV, and gross margins are undefined)',
+    'Vulnerable to rapid replication by established market incumbents',
+  ];
+  const badNextSteps = [
+    'Focus on securing 10-20 paying pilot customers before raising further capital',
+    'Rigorously track and optimize CAC and customer retention for 6 consecutive months',
+    'Reset valuation expectations to align with early-stage pre-revenue market benchmarks',
+  ];
+
   return {
+    summary: `${session.pitch.companyName} addresses an identifiable problem but lacks the unit economics and traction required to justify its current valuation.`,
+    estimatedValue: Math.round(session.pitch.impliedValuation * 0.4),
+    valuationReasoning: `Valuation discounted by 60% due to unproven customer acquisition costs and absence of defensible market moat.`,
     strengths: [
       'Identified a clear macro problem in a sizeable industry space',
       'Passionate founder commitment to solving the core user pain point',
       'Initial prototype demonstrates core concept viability',
     ],
-    weaknesses: [
-      'Unsubstantiated valuation disconnected from current revenue and traction metrics',
-      'Lacks verifiable unit economics (CAC, LTV, and gross margins are undefined)',
-      'Vulnerable to rapid replication by established market incumbents',
-    ],
-    actionItems: [
-      'Focus on securing 10-20 paying pilot customers before raising further capital',
-      'Rigorously track and optimize CAC and customer retention for 6 consecutive months',
-      'Reset valuation expectations to align with early-stage pre-revenue market benchmarks',
-    ],
+    improvements: badImprovements,
+    weaknesses: badImprovements,
+    nextSteps: badNextSteps,
+    actionItems: badNextSteps,
   };
 }

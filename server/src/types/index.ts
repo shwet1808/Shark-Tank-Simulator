@@ -104,6 +104,8 @@ export interface BusinessReview {
   strengths: string[];
   improvements: string[];
   nextSteps: string[];
+  weaknesses?: string[];
+  actionItems?: string[];
 }
 
 export interface FinalDeal {
