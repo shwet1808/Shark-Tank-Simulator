@@ -1,0 +1,219 @@
+================================================================================
+PITCH HEADINGS: [NO DEAL] — 10 PITCHES GUARANTEED TO BE REJECTED BY SHARKS
+All pitches feature: Outrageous Valuations | Broken Unit Economics | No Moat | Zero Traction
+Instructions:
+1. Go to "Paste Pitch Text" tab on http://localhost:5173/pitch
+2. Copy the "Company Name", "Ask Amount ($)", and "Equity Offered (%)"
+3. Copy and paste the "Pitch Text" into the textarea
+4. Click "Enter the Tank" → Watch all 4 sharks tear the pitch apart and say "I'M OUT!"
+================================================================================
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+[NO DEAL PITCH #1] — CryptoPetz (NFT Metaverse Virtual Dogs)
+Expected Result: ❌ NO DEAL (All 4 Sharks Pass — Zero Revenue, Absurd $30M Valuation)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Company Name: CryptoPetz
+Ask Amount ($): 3000000
+Equity Offered (%): 10
+
+--- PITCH TEXT (COPY EVERYTHING BELOW) ---
+CryptoPetz is a decentralized Web3 metaverse platform where users can adopt, breed, and dress up virtual NFT robotic puppies on the blockchain. Users can buy virtual dog food and virtual designer accessories using our proprietary $PETZ token. We believe the future of emotional companionship is decentralized virtual pets. The global metaverse gaming market is projected to be $800B by 2030.
+
+Traction: We currently have 450 Discord members and a playable 3D demo. Revenue to date is $0. We have not launched our token presale yet.
+Business Model: Selling NFT pet drops for 0.2 ETH each, taking a 5% marketplace transaction fee on secondary trades, and selling in-game virtual fashion items.
+Unit Economics: CAC $140 | LTV $25 | LTV:CAC = 0.18:1 (Losing money on every user) | Gross Margin 10% | Burn $65k/mo | Runway 3 months | MRR $0
+
+Moat: We have custom 3D low-poly cartoon dog artwork created by freelance digital artists on Fiverr.
+Team: Kevin and Brad, two crypto enthusiasts and day traders who previously ran a meme coin marketing channel.
+Financial Ask: $3,000,000 for 10% equity (implied valuation $30,000,000) to hire Unity developers and partner with crypto influencers.
+Exit Potential: We plan to conduct a public token listing on decentralized exchanges next year.
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+[NO DEAL PITCH #2] — ArtisanWater (Luxury Artisan Bottled Tap Water)
+Expected Result: ❌ NO DEAL (All 4 Sharks Pass — Zero Moat, Commodity Product, Overvalued)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Company Name: ArtisanWater
+Ask Amount ($): 1500000
+Equity Offered (%): 5
+
+--- PITCH TEXT (COPY EVERYTHING BELOW) ---
+ArtisanWater is premium municipal tap water that has been filtered through crushed Himalayan pink salt and energized with acoustic sound bowl vibrations at 432 Hz to re-align water molecular clusters. We bottle it in heavy frosted glass bottles with cork stoppers and retail it for $18 per 750ml bottle in luxury hotel minibars and high-end yoga studios. The premium bottled water market is $22B.
+
+Traction: We sold 2,000 bottles over the past 6 months primarily to friends, family, and two local fitness boutique studios. Total revenue is $24,000.
+Business Model: Direct wholesale to boutique hospitality venues at $8/bottle and direct-to-consumer online 6-packs.
+Unit Economics: CAC $65 (paid social ads) | LTV $36 | LTV:CAC = 0.55:1 | Gross Margin 22% (heavy glass packaging and shipping costs eat all margin) | Burn $25k/mo | Runway 2 months | MRR $2k
+
+Moat: Our branding and aesthetic label design. We have a pending trademark on "Vibrationally Aligned Hydration".
+Team: Sebastian Cross, a former lifestyle influencer and holistic wellness speaker with zero consumer packaged goods or supply chain experience.
+Financial Ask: $1,500,000 for 5% equity (implied valuation $30,000,000) to launch an outdoor billboard advertising campaign in Los Angeles and Miami.
+Exit Potential: We expect to be acquired by Fiji Water or San Pellegrino within 3 years.
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+[NO DEAL PITCH #3] — DroneLaundry (On-Demand Drone Clothes Delivery)
+Expected Result: ❌ NO DEAL (All 4 Sharks Pass — Regulatory Nightmare, Burning Cash, Non-Viable)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Company Name: DroneLaundry
+Ask Amount ($): 5000000
+Equity Offered (%): 8
+
+--- PITCH TEXT (COPY EVERYTHING BELOW) ---
+DroneLaundry is a revolutionary dry cleaning and laundry delivery concept where autonomous commercial quadcopter drones fly directly to your high-rise balcony or backyard to pick up dirty laundry bags and return them freshly pressed within 90 minutes. The US dry cleaning industry is $9B.
+
+Traction: We have completed 12 test flights in a rural open field outside Dallas. We have zero paying customers, zero commercial FAA drone delivery licenses, and zero automated wash facilities. Trailing twelve month revenue is $0.
+Business Model: $45 per laundry bag drone flight plus standard per-pound laundry washing fees.
+Unit Economics: CAC $350 | LTV Unknown | Battery replacement and drone maintenance costs $65 per flight | Gross Margin -35% (Negative gross margin on every delivery) | Burn $120k/mo | Runway 4 months | MRR $0
+
+Moat: None. We buy commercial off-the-shelf DJI heavy-lift industrial drones and attach carabiner clips to the undercarriage.
+Team: Jason Miller, an amateur drone racing hobbyist and former software tester with no logistics or aviation regulatory background.
+Financial Ask: $5,000,000 for 8% equity (implied valuation $62,500,000) to build a fleet of 50 custom drones and lobby the Federal Aviation Administration for flight waivers.
+Exit Potential: Acquisition by Uber Eats or DoorDash.
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+[NO DEAL PITCH #4] — Smell-O-Vision Phone (Scent-Emitting Smartphone Case)
+Expected Result: ❌ NO DEAL (All 4 Sharks Pass — Gimmick Product, High Return Rates, No Demand)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Company Name: Smell-O-Vision
+Ask Amount ($): 2000000
+Equity Offered (%): 10
+
+--- PITCH TEXT (COPY EVERYTHING BELOW) ---
+Smell-O-Vision is a bulky clip-on smartphone case equipped with micro-heaters and refillable synthetic fragrance pods. When you scroll past a photo of freshly baked pizza or blooming lavender on Instagram, our companion app reads the image and activates the corresponding fragrance pod to spray a scent into your face. We believe multimodal olfactory social media is the next frontier.
+
+Traction: We ran a Kickstarter campaign that raised $45,000 from 300 backers. However, 65% of delivered units were returned due to fragrance oil leaking into phone charging ports and burning users' fingers. Current revenue is $0.
+Business Model: $89 for the phone hardware case + $15 monthly subscription for 3 replacement aroma scent cartridges.
+Unit Economics: CAC $95 | LTV $40 | Gross Margin 28% before factoring in 40% warranty return rate | Burn $35k/mo | Runway 2 months | MRR $0
+
+Moat: A provisional patent on a micro-piezoelectric scent dispenser nozzle that frequently clogs.
+Team: Greg Vance, a retired gadget collector with no manufacturing or industrial engineering experience.
+Financial Ask: $2,000,000 for 10% equity (implied valuation $20,000,000) to redesign the hardware molds and manufacture 20,000 units in Shenzhen.
+Exit Potential: Acquisition by Apple or Samsung.
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+[NO DEAL PITCH #5] — Rent-A-Friend (Hourly Platonic In-Person Companion App)
+Expected Result: ❌ NO DEAL (All 4 Sharks Pass — Massive Liability, Unscalable, Creepy Concept)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Company Name: Rent-A-Friend
+Ask Amount ($): 1200000
+Equity Offered (%): 6
+
+--- PITCH TEXT (COPY EVERYTHING BELOW) ---
+Rent-A-Friend is a gig-economy marketplace app that allows lonely adults to rent vetted platonic human companions by the hour to attend weddings, watch television together, or sit silently in coffee shops. Loneliness is an epidemic declared by the Surgeon General, representing a massive cultural wellness opportunity.
+
+Traction: 120 registered companions in two college towns. 85 completed bookings over 8 months with total gross booking volume of $4,200. Net company commission revenue is $840. We are currently facing two pending lawsuits from incident disputes.
+Business Model: 20% platform commission on hourly booking rates ($30-$50/hour).
+Unit Economics: CAC $85 (background checks and social ads) | LTV $35 | LTV:CAC = 0.41:1 | Gross Margin 35% | Burn $20k/mo | Runway 3 months | MRR $120
+
+Moat: None. Any person can message someone on Craigslist, Facebook Groups, or TaskRabbit.
+Team: Ashley and Tyler, recent sociology college graduates with no tech product management or marketplace operations experience.
+Financial Ask: $1,200,000 for 6% equity (implied valuation $20,000,000) to hire criminal defense attorneys and launch campus ambassador marketing.
+Exit Potential: Acquisition by Match Group or Bumble.
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+[NO DEAL PITCH #6] — SoloSpoon (Self-Heating Electric Soup Spoon)
+Expected Result: ❌ NO DEAL (All 4 Sharks Pass — Solves Non-Existent Problem, Ridiculous Unit Cost)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Company Name: SoloSpoon
+Ask Amount ($): 800000
+Equity Offered (%): 10
+
+--- PITCH TEXT (COPY EVERYTHING BELOW) ---
+SoloSpoon is a rechargeable, battery-powered stainless steel spoon with an internal ceramic heating coil designed to keep every individual bite of soup or chili at exactly 145 degrees Fahrenheit from your bowl to your mouth. Never suffer through lukewarm soup again! The global kitchen cutlery market is $12B.
+
+Traction: We sold 140 spoons on our Shopify store over 10 months. Total revenue is $9,800. We have received 40 customer complaints regarding electric battery taste and spoon handle overheating.
+Business Model: Direct-to-consumer sales at $70 per spoon (manufacturing cost is $52 per unit due to small production batches).
+Unit Economics: CAC $62 on Facebook ads | LTV $70 | Gross Margin 25% | Burn $15k/mo | Runway 3 months | MRR $500
+
+Moat: None. Anyone with standard heating element manufacturing can make this in 30 days.
+Team: Dave Henderson, a self-taught inventor who spent $100k of his retirement savings on plastic injection molds.
+Financial Ask: $800,000 for 10% equity (implied valuation $8,000,000) to buy TV infomercial airtime on late-night cable.
+Exit Potential: Buyout by Oxo or Williams-Sonoma.
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+[NO DEAL PITCH #7] — AirGuitar Pro (Virtual Motion-Sensor Rock Glove)
+Expected Result: ❌ NO DEAL (All 4 Sharks Pass — Flawed Hardware, Novelty Item, Dead Category)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Company Name: AirGuitar Pro
+Ask Amount ($): 2500000
+Equity Offered (%): 8
+
+--- PITCH TEXT (COPY EVERYTHING BELOW) ---
+AirGuitar Pro is a pair of wearable Bluetooth sensor gloves that synthesize heavy metal electric guitar riffs through your smartphone headphones whenever you strum your fingers in thin air. You don't need real strings or musical talent—just rock out anywhere on the subway or at the office!
+
+Traction: 250 prototype units given to gaming YouTubers. 18 commercial pre-orders placed on our website over 6 months ($1,800 in unfulfilled pre-orders).
+Business Model: Selling the hardware gloves for $99 + $4.99/mo premium virtual amplifier and guitar sound preset pack.
+Unit Economics: CAC $110 | LTV $65 | Gross Margin 30% | Burn $40k/mo | Runway 2 months | MRR $0
+
+Moat: None. Accelerometer gesture recognition is standard open-source code on GitHub.
+Team: Rick "The Shredder" Kelly, former guitarist in an 80s tribute cover band with zero software development experience.
+Financial Ask: $2,500,000 for 8% equity (implied valuation $31,250,000) to exhibit at E3 gaming convention and pay rockstars for celebrity endorsements.
+Exit Potential: Buyout by Guitar Hero or Fender.
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+[NO DEAL PITCH #8] — GlowTacos (Luminescent Midnight Food Truck Franchise)
+Expected Result: ❌ NO DEAL (All 4 Sharks Pass — Health Code Violation Risk, Unscalable Franchise)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Company Name: GlowTacos
+Ask Amount ($): 1500000
+Equity Offered (%): 7
+
+--- PITCH TEXT (COPY EVERYTHING BELOW) ---
+GlowTacos is a late-night street food concept serving neon-glowing tacos and quesadillas using synthesized edible riboflavin and synthetic food coloring that fluoresces intensely under UV blacklights. We target drunk college students leaving bars at 2:00 AM who want viral Instagram and TikTok food photos.
+
+Traction: One single leased converted school bus operating outside a college campus on Thursday, Friday, and Saturday nights. Trailing revenue is $35,000 over 8 months with net losses of $22,000 due to generator repairs and ingredient spoilage.
+Business Model: Selling neon street tacos at $8 each ($2.50 food cost).
+Unit Economics: Unit food economics are erratic | Food waste exceeds 35% | Burn $8k/mo | Cash on hand: $4,000 | Runway 2 weeks | MRR $3k
+
+Moat: Zero moat. Any food truck owner can purchase UV blacklight bulbs and riboflavin dye tomorrow afternoon.
+Team: Leo and Marco, two fraternity brothers with no professional restaurant management or commercial culinary training.
+Financial Ask: $1,500,000 for 7% equity (implied valuation $21,400,000) to build a fleet of 20 custom glow-in-the-dark school buses nationwide.
+Exit Potential: Acquisition by Yum! Brands (Taco Bell).
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+[NO DEAL PITCH #9] — NanoNap (3-Minute Acoustic Brain Wave Sleeping Pod)
+Expected Result: ❌ NO DEAL (All 4 Sharks Pass — Zero Clinical Evidence, Pseudoscience, Overpriced)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Company Name: NanoNap
+Ask Amount ($): 4000000
+Equity Offered (%): 8
+
+--- PITCH TEXT (COPY EVERYTHING BELOW) ---
+NanoNap is an egg-shaped fiberglass sleeping pod that claims to deliver the restorative neurochemical benefits of a full 8-hour deep REM sleep cycle in just 3 minutes by playing pulsing 7.83 Hz electromagnetic brainwave tones and pulsing colored LED strobe lights into your closed eyelids. We want to place them in airport terminals and corporate tech campuses.
+
+Traction: We built one wood and fiberglass prototype in our garage. Zero clinical sleep studies conducted. Zero FDA or medical device certifications. Zero institutional sales. Total revenue is $0.
+Business Model: Leasing pods to Fortune 500 offices at $3,500/month or pay-per-nap ($15 for 3 minutes) in airport transit hubs.
+Unit Economics: Pod unit manufacturing cost is $42,000 each | Maintenance and sanitization costs $800/mo | Gross Margin Unknown | Burn $50k/mo | Runway 1 month | MRR $0
+
+Moat: None. The medical and sleep science community universally rejects the claim that 3 minutes can replace 8 hours of sleep.
+Team: Dr. Victor Stone (claims to be an "energy field researcher" with an unaccredited online honorary doctorate).
+Financial Ask: $4,000,000 for 8% equity (implied valuation $50,000,000) to install pods at major international airport hubs.
+Exit Potential: Acquisition by Casper Sleep or Delta Airlines.
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+[NO DEAL PITCH #10] — PetTelepathy (AI Dog Brain-Wave Thought Translator)
+Expected Result: ❌ NO DEAL (All 4 Sharks Pass — Pseudoscience Gimmick, Zero Working Tech, Scam Alert)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Company Name: PetTelepathy
+Ask Amount ($): 3500000
+Equity Offered (%): 5
+
+--- PITCH TEXT (COPY EVERYTHING BELOW) ---
+PetTelepathy is an elastic dog headband with metal electrodes that claims to read canine EEG neural impulses and speak your dog's exact inner thoughts out loud in English through a tiny collar speaker ("I want a treat!", "I love you, mommy!"). The global pet care market is $260B.
+
+Traction: 80 units sold to humorous novelty gift shoppers on Amazon. 90% of buyers left 1-star reviews stating the device merely plays random pre-recorded audio files on a 30-second timer regardless of what the dog is doing. Total revenue is $3,200.
+Business Model: Selling novelty headbands for $49.99 (cost to produce in China is $6.00).
+Unit Economics: CAC $42 | LTV $25 (after massive Amazon return deductions) | Net negative margin | Burn $30k/mo | Runway 1 month | MRR $0
+
+Moat: None. There is no working neural AI translation technology—it is simply a novelty soundboard toy masquerading as neuroscience.
+Team: Brett Henderson, a former carnival game operator and dropshipper with zero veterinary or neuroscience credentials.
+Financial Ask: $3,500,000 for 5% equity (implied valuation $70,000,000) to build a cat version and run national Super Bowl commercial ads.
+Exit Potential: Acquisition by Petco or Hasbro.

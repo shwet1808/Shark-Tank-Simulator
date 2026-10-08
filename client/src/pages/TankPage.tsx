@@ -187,27 +187,38 @@ export default function TankPage() {
             </div>
           )}
 
-          {/* Inline report preview strip when discussion tab active */}
+          {/* Inline result strip when discussion tab active and session complete */}
           {view === 'discussion' && finalDeal && !isStreaming && (
             <div
-              className="flex-shrink-0 border-t px-4 py-3 flex items-center justify-between"
+              className="flex-shrink-0 border-t px-4 py-3 flex flex-wrap items-center justify-between gap-3"
               style={{ borderColor: 'var(--color-border)', backgroundColor: 'var(--color-surface)' }}
             >
               <div className="flex items-center gap-2">
                 <CheckCircle2 className="w-4 h-4 text-emerald-400" />
                 <span className="text-sm text-zinc-300 font-medium">
                   {finalDeal.status === 'deal'
-                    ? `🤝 Deal closed with ${finalDeal.shark}!`
-                    : '❌ No deal — all sharks passed.'}
+                    ? `🤝 ${finalDeal.verdict}`
+                    : `❌ ${finalDeal.verdict}`}
                 </span>
               </div>
-              <button
-                onClick={() => setView('report')}
-                className="text-xs px-3 py-1.5 rounded-md bg-zinc-800 hover:bg-zinc-700
-                  text-zinc-200 transition-colors border border-zinc-700"
-              >
-                View Full Report →
-              </button>
+              <div className="flex items-center gap-2">
+                <button
+                  onClick={() => setView('report')}
+                  className="text-xs px-3 py-1.5 rounded-md bg-zinc-800 hover:bg-zinc-700
+                    text-zinc-200 transition-colors border border-zinc-700"
+                >
+                  Full Report →
+                </button>
+                <button
+                  onClick={() => navigate('/pitch')}
+                  className="text-xs px-3 py-1.5 rounded-md text-white transition-all
+                    hover:opacity-90 flex items-center gap-1.5"
+                  style={{ backgroundColor: 'var(--color-accent)' }}
+                >
+                  <ChevronLeft className="w-3.5 h-3.5" />
+                  Pitch Again
+                </button>
+              </div>
             </div>
           )}
         </main>
