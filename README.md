@@ -31,7 +31,7 @@ The startup world is filled with the "Polite Feedback Echo Chamber." Friends and
 4. **Test Data:** Use the provided `/demopitch` folder for perfectly formatted copy-paste examples.
 
 ## 🏗 Architecture
-Built under a strict 3-hour hackathon constraint.
+Built under a hackathon
 - **Frontend:** React + Vite + Tailwind (Sub-300 lines per file).
 - **Backend:** Node + Express + TypeScript + OpenAI SDK (Smart Fallback AI Routing).
 
