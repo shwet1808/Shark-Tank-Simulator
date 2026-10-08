@@ -41,9 +41,19 @@ export interface FinalDeal {
   equity?: number;
   valuation?: number;
   memo: string;
+  review: BusinessReview;
   scores: Record<string, number>;
   overallScore: number;
   verdict: string;
+}
+
+export interface BusinessReview {
+  summary: string;
+  estimatedValue: number;
+  valuationReasoning: string;
+  strengths: string[];
+  improvements: string[];
+  nextSteps: string[];
 }
 
 export interface UnitEconomics {

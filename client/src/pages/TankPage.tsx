@@ -13,11 +13,10 @@ const SHARK_IDS: SharkId[] = ['vikram', 'alya', 'kabir', 'devika'];
 export default function TankPage() {
   const { sessionId } = useParams<{ sessionId: string }>();
   const navigate = useNavigate();
-  const {
-    messages, phase, sharkMoods, finalDeal, isStreaming, error,
-  } = useSessionStore();
+  const { messages, phase, sharkMoods, finalDeal, isStreaming, error } =
+    useSessionStore();
 
-  // Kick off the SSE stream
+  // Kick off the SSE stream on mount
   useSessionStream(sessionId ?? null);
 
   // Get last message per shark for the card preview
@@ -26,16 +25,27 @@ export default function TankPage() {
     return sharkMsgs[sharkMsgs.length - 1];
   }
 
-  // Which shark spoke last
+  // Which shark spoke last (for active highlight)
   const lastSpeakerId = messages[messages.length - 1]?.sharkId;
 
   return (
-    <div className="h-screen flex flex-col overflow-hidden bg-zinc-950">
+    <div
+      className="h-screen flex flex-col overflow-hidden"
+      style={{
+        backgroundColor: 'var(--color-bg)',
+      }}
+    >
       {/* Top bar */}
-      <header className="flex-shrink-0 border-b border-zinc-800/40 px-4 py-3 flex items-center justify-between gap-4">
-        <button onClick={() => navigate('/')}
-          className="flex items-center gap-1.5 text-zinc-500 hover:text-zinc-300 transition-colors text-xs">
-          <ChevronLeft className="w-3.5 h-3.5" />Back
+      <header
+        className="flex-shrink-0 border-b px-4 py-3 flex items-center justify-between gap-4"
+        style={{ borderColor: 'var(--color-border)' }}
+      >
+        <button
+          onClick={() => navigate('/')}
+          className="flex items-center gap-1.5 text-[var(--color-text-muted)] hover:text-[var(--color-text)] transition-colors text-xs"
+        >
+          <ChevronLeft className="w-3.5 h-3.5" />
+          Back
         </button>
 
         <PhaseIndicator phase={phase} />
@@ -47,19 +57,23 @@ export default function TankPage() {
               <span className="text-xs text-red-400 font-medium">LIVE</span>
             </>
           ) : finalDeal ? (
-            <span className="text-xs text-zinc-500">Session ended</span>
+            <span className="text-xs text-[var(--color-text-muted)]">
+              Session ended
+            </span>
           ) : (
-            <span className="text-xs text-zinc-600">Starting...</span>
+            <span className="text-xs text-[var(--color-text-muted)]">Starting...</span>
           )}
         </div>
       </header>
 
-      {/* Main layout: Left panel + Right chat */}
+      {/* Main layout: shark panel + chat */}
       <div className="flex-1 flex overflow-hidden">
-
         {/* Left: Shark status panel */}
-        <aside className="w-72 flex-shrink-0 border-r border-zinc-800/40 flex flex-col overflow-y-auto scrollbar-hide p-3 gap-3">
-          <div className="text-[10px] font-semibold text-zinc-600 uppercase tracking-widest px-1 pt-1">
+        <aside
+          className="w-72 flex-shrink-0 border-r flex flex-col overflow-y-auto scrollbar-hide p-3 gap-3"
+          style={{ borderColor: 'var(--color-border)' }}
+        >
+          <div className="text-[10px] font-semibold text-[var(--color-text-muted)] uppercase tracking-widest px-1 pt-1">
             The Panel
           </div>
           {SHARK_IDS.map((sharkId) => {
@@ -76,19 +90,27 @@ export default function TankPage() {
           })}
 
           {/* Session stats */}
-          <div className="mt-auto pt-3 border-t border-zinc-800/60">
+          <div className="mt-auto pt-3 border-t" style={{ borderColor: 'var(--color-border)' }}>
             <div className="glass-card p-3 space-y-2">
               <div className="flex justify-between text-xs">
-                <span className="text-zinc-600">Messages</span>
-                <span className="text-zinc-300 font-medium">{messages.length}</span>
+                <span className="text-[var(--color-text-muted)]">Messages</span>
+                <span className="font-medium text-[var(--color-text)]">
+                  {messages.length}
+                </span>
               </div>
               <div className="flex justify-between text-xs">
-                <span className="text-zinc-600">Phase</span>
-                <span className="text-zinc-300 font-medium capitalize">{phase}</span>
+                <span className="text-[var(--color-text-muted)]">Phase</span>
+                <span className="font-medium text-[var(--color-text)] capitalize">
+                  {phase}
+                </span>
               </div>
               <div className="flex justify-between text-xs">
-                <span className="text-zinc-600">Status</span>
-                <span className={`font-medium text-xs ${isStreaming ? 'text-red-400' : 'text-zinc-400'}`}>
+                <span className="text-[var(--color-text-muted)]">Status</span>
+                <span
+                  className={`font-medium text-xs ${
+                    isStreaming ? 'text-red-400' : 'text-[var(--color-text-muted)]'
+                  }`}
+                >
                   {isStreaming ? 'Live' : 'Idle'}
                 </span>
               </div>
@@ -96,22 +118,38 @@ export default function TankPage() {
           </div>
         </aside>
 
-        {/* Right: Chat stream + Deal resolution */}
+        {/* Right: Chat + Deal resolution */}
         <main className="flex-1 flex flex-col overflow-hidden">
-          {/* Error banner */}
+          {/* Error popup modal */}
           {error && (
-            <div className="flex-shrink-0 flex items-start gap-2 m-3 p-3 rounded-lg bg-red-500/10 border border-red-500/20">
-              <AlertCircle className="w-4 h-4 text-red-400 mt-0.5 flex-shrink-0" />
-              <div className="text-xs text-red-400">{error}</div>
+            <div className="absolute inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm p-4">
+              <div className="bg-zinc-950 border border-red-500/30 p-6 rounded-xl max-w-md w-full shadow-2xl flex flex-col items-center text-center gap-4">
+                <div className="w-12 h-12 rounded-full bg-red-500/10 flex items-center justify-center">
+                  <AlertCircle className="w-6 h-6 text-red-500" />
+                </div>
+                <div>
+                  <h3 className="text-lg font-medium text-zinc-100 mb-1">Session Error</h3>
+                  <p className="text-sm text-red-400">{error}</p>
+                </div>
+                <button
+                  onClick={() => navigate('/')}
+                  className="mt-2 w-full py-2 bg-zinc-900 hover:bg-zinc-800 text-zinc-100 text-sm rounded-lg transition-colors border border-zinc-800"
+                >
+                  Return Home
+                </button>
+              </div>
             </div>
           )}
 
-          {/* Chat */}
+          {/* Chat stream */}
           <ChatStream messages={messages} isStreaming={isStreaming} />
 
-          {/* Deal resolution (shown when complete) */}
+          {/* Deal resolution panel */}
           {finalDeal && (
-            <div className="flex-shrink-0 p-4 border-t border-zinc-800/40 overflow-y-auto max-h-[50vh] scrollbar-hide">
+            <div
+              className="flex-shrink-0 p-4 border-t overflow-y-auto max-h-[50vh] scrollbar-hide"
+              style={{ borderColor: 'var(--color-border)' }}
+            >
               <DealResolution deal={finalDeal} />
             </div>
           )}

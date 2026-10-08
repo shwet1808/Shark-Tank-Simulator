@@ -1,0 +1,182 @@
+=============================================================
+SECTION 1: 10 PITCHES FOR "PASTE PITCH TEXT" MODE (Natural Text)
+=============================================================
+
+--- PITCH 1 (Category: Deal - SaaS) ---
+Company: WorkflowAI
+Ask: $1,000,000 for 10%
+Pitch Text:
+WorkflowAI is an intelligent automation platform designed for mid-market legal firms. The problem is that legal teams spend 40% of their time on repetitive document formatting and case law summaries. Our solution uses proprietary LLM pipelines to automate these workflows. The TAM is $8B globally. We currently have $1.2M ARR, growing at 15% MoM, with a CAC of $400 and an LTV of $4,500. Our gross margins are 82%. We are ex-Google and legal experts. We are asking for $1M for 10% to scale our sales team. We believe our network effects and proprietary training data provide an unbreachable moat.
+
+--- PITCH 2 (Category: Deal - Consumer Tech) ---
+Company: SleepSync
+Ask: $500,000 for 15%
+Pitch Text:
+SleepSync is a smart sleep tracking headband that actively modulates brainwaves using neuro-audio feedback. Over 50 million Americans suffer from chronic insomnia. Our hardware+software solution improves deep sleep by 24% according to our clinical trials. Our market size is $15B. We launched 6 months ago, have $600k in trailing revenue, and our hardware margins are 60%. Our CAC is $35 and LTV is $250. Our moat is our 3 pending utility patents on the neuro-audio algorithms. We are asking for $500k to fund our next manufacturing run.
+
+--- PITCH 3 (Category: Counter-Offer - FinTech) ---
+Company: MicroLend
+Ask: $2,000,000 for 5%
+Pitch Text:
+MicroLend is democratizing short-term loans for gig workers. Traditional banks ignore them, leaving a $30B market gap. Our app connects gig workers with peer lenders using AI risk assessment. We have facilitated $5M in loans so far, taking a 3% fee, yielding $150k in revenue. CAC is $15, LTV is $90. Burn rate is high at $80k/month because of marketing. We are valuing ourselves at $40M pre-money ($2M for 5%) because of our explosive user growth of 30% MoM. 
+
+--- PITCH 4 (Category: Counter-Offer - HealthTech) ---
+Company: NutriScan
+Ask: $300,000 for 10%
+Pitch Text:
+NutriScan is a computer vision app that instantly logs calories and macros from a photo. The health app market is $5B. We have 50,000 DAUs, but we are currently pre-revenue as we perfect the algorithm. We plan to monetize via a $9.99/mo premium subscription. Our server costs (burn rate) are $10k/month. The founders are two PhD computer vision scientists. We need $300k for 10% to launch the premium tier and hire a marketing lead. 
+
+--- PITCH 5 (Category: No Deal - Absurd Valuation) ---
+Company: TeleportX
+Ask: $10,000,000 for 1%
+Pitch Text:
+TeleportX is a VR social network that will replace Facebook. The problem is social media is boring. The TAM is $1 Trillion. We have built a prototype in Unity, but we have 0 users and $0 revenue. We will make money by selling digital real estate. Our founders are two college dropouts with a vision. We need $10M at a $1 Billion valuation to hire 100 engineers and build the metaverse. 
+
+--- PITCH 6 (Category: No Deal - Tiny Market) ---
+Company: LeftHandedScissors.com
+Ask: $100,000 for 20%
+Pitch Text:
+We make custom, artisan scissors exclusively for left-handed barbers in rural areas. It's a highly underserved market. The TAM is roughly $500,000 per year. We have $12,000 in lifetime sales over 4 years. Margins are 15% because we hand-forge them. We need $100k to buy a new forge. We have no moat, but we have a lot of passion for scissors.
+
+--- PITCH 7 (Category: Deal - EdTech) ---
+Company: CodeKids
+Ask: $750,000 for 12%
+Pitch Text:
+CodeKids provides interactive, gamified coding bootcamps for elementary students. Schools lack computer science teachers. We sell B2B to school districts. The SAM is $2B. We have secured contracts with 40 school districts, generating $800k ARR. CAC is $5,000 per district, but LTV is $60,000 over 3 years. We are cash flow positive. We need $750k to expand into three new states and hire regional sales directors.
+
+--- PITCH 8 (Category: Counter-Offer - Hardware) ---
+Company: OmniCharge
+Ask: $1,500,000 for 8%
+Pitch Text:
+OmniCharge is a universal, wireless charging desk pad that powers laptops, phones, and peripherals simultaneously. The TAM is $12B. We have $2M in pre-orders from Kickstarter, but our manufacturing is delayed due to supply chain issues. Hardware margins are currently 25%, but will improve to 45% at scale. We are asking for $1.5M for 8% to unlock our tooling molds and fulfill our backorders.
+
+--- PITCH 9 (Category: No Deal - High Burn Rate) ---
+Company: DeliverMe
+Ask: $3,000,000 for 15%
+Pitch Text:
+DeliverMe is a 10-minute grocery delivery app. The market is huge ($100B). We have $500k in monthly revenue in New York City. However, our margins are negative 40%. We burn $1.2M per month subsidizing deliveries and paying riders. We have 2 months of runway left. We need $3M just to survive the next quarter while we figure out how to become profitable.
+
+--- PITCH 10 (Category: Deal - B2B Marketplace) ---
+Company: FreightConnect
+Ask: $1,000,000 for 10%
+Pitch Text:
+FreightConnect is a marketplace connecting independent truck drivers directly with local manufacturers, cutting out freight brokers. The market size is $50B. We have processed $10M in gross merchandise value (GMV) in 12 months, taking a 10% take-rate ($1M net revenue). We are growing 20% MoM. CAC is $150, LTV is $3,500. We need $1M to launch our mobile app and expand to the Midwest.
+
+=============================================================
+SECTION 2: 5 PITCHES FOR "STRUCTURED FORM" MODE (Key-Value)
+=============================================================
+
+--- PITCH 11 (Category: Deal - CyberSecurity) ---
+Company Name: SentinelAI
+One-line Tagline: AI-powered threat detection for SMBs.
+Industry: CyberSecurity
+Stage: Scaling
+Ask Amount ($): 1500000
+Equity Offered (%): 15
+The Problem: SMBs can't afford dedicated security teams but face rising ransomware attacks.
+Market Size: $15B SAM in North America.
+Product / Solution: Plug-and-play network appliance that uses ML to block anomalies instantly.
+Traction: $1.5M ARR, 300 active clients.
+Business Model: $500/month SaaS fee per office location.
+CAC: $800
+LTV: $12000
+Gross Margin: 85%
+Burn Rate: $30000/mo
+Runway: 12 months
+Competition: CrowdStrike (too expensive), Cisco (too complex).
+Competitive Moat: Proprietary threat-sharing network across all our deployed devices.
+Founder Name(s): Sarah Jenkins
+Team Background: Ex-NSA security analyst.
+Exit Potential: Acquisition by Palo Alto Networks or Cisco in 4-6 years.
+
+--- PITCH 12 (Category: Counter-Offer - D2C E-commerce) ---
+Company Name: GreenSip
+One-line Tagline: Biodegradable coffee pods that actually taste good.
+Industry: Consumer Goods
+Stage: Seed
+Ask Amount ($): 600000
+Equity Offered (%): 10
+The Problem: Keurig pods generate millions of tons of plastic waste annually.
+Market Size: $6B single-serve coffee market.
+Product / Solution: Patented seaweed-based pods that dissolve in soil in 4 weeks.
+Traction: $400k lifetime sales, 50% repeat purchase rate.
+Business Model: D2C Subscription box ($20/month).
+CAC: $25
+LTV: $80
+Gross Margin: 45%
+Burn Rate: $15000/mo
+Runway: 6 months
+Competition: Nespresso, compostable brands that lose flavor.
+Competitive Moat: Utility patent on the flavor-sealing biodegradable membrane.
+Founder Name(s): Mark and Lisa Davis
+Team Background: Material science engineers.
+Exit Potential: Acquisition by Nestle or Keurig.
+
+--- PITCH 13 (Category: No Deal - Too Early / Cluttered Market) ---
+Company Name: ChatConnect
+One-line Tagline: A new messaging app for friends.
+Industry: Social Media
+Stage: MVP
+Ask Amount ($): 200000
+Equity Offered (%): 5
+The Problem: People want a simpler way to chat.
+Market Size: Everyone with a smartphone.
+Product / Solution: A chat app with blue bubbles.
+Traction: 150 beta testers (mostly friends and family).
+Business Model: We will figure it out later, maybe ads.
+CAC: $0
+LTV: $0
+Gross Margin: 0%
+Burn Rate: $2000/mo
+Runway: 3 months
+Competition: WhatsApp, iMessage, Telegram.
+Competitive Moat: Our UI is slightly cleaner.
+Founder Name(s): Tim
+Team Background: Recent high school grad.
+Exit Potential: IPO.
+
+--- PITCH 14 (Category: Deal - CleanTech) ---
+Company Name: SolarGrid
+One-line Tagline: Distributed battery storage for residential solar.
+Industry: CleanTech
+Stage: Growth
+Ask Amount ($): 2500000
+Equity Offered (%): 20
+The Problem: Solar energy is wasted during peak production hours.
+Market Size: $20B residential solar market.
+Product / Solution: Smart battery unit that trades surplus energy back to the grid automatically.
+Traction: 2,000 units installed, $5M trailing revenue.
+Business Model: Hardware sale ($2000) + $10/mo software subscription.
+CAC: $400
+LTV: $3000
+Gross Margin: 55%
+Burn Rate: $100000/mo
+Runway: 18 months
+Competition: Tesla Powerwall.
+Competitive Moat: We are 40% cheaper and integrate with older inverter models.
+Founder Name(s): Dr. Helen Cho
+Team Background: 15 years in grid infrastructure management.
+Exit Potential: Acquisition by Sunrun or major utility company.
+
+--- PITCH 15 (Category: Counter-Offer - AI Tooling) ---
+Company Name: PromptOps
+One-line Tagline: CI/CD for LLM Prompts.
+Industry: Developer Tools
+Stage: Revenue
+Ask Amount ($): 1000000
+Equity Offered (%): 8
+The Problem: Dev teams hardcode prompts, causing regressions when models update.
+Market Size: $2B and growing fast.
+Product / Solution: Version control and A/B testing dashboard for AI prompts.
+Traction: $300k ARR, 40 enterprise pilots.
+Business Model: Seat-based SaaS ($50/dev/month).
+CAC: $1500
+LTV: $15000
+Gross Margin: 90%
+Burn Rate: $60000/mo
+Runway: 10 months
+Competition: LangChain, homegrown solutions.
+Competitive Moat: First mover advantage and deep integrations with GitHub.
+Founder Name(s): David Chen
+Team Background: Ex-OpenAI researcher.
+Exit Potential: Acquisition by Microsoft or GitLab.

@@ -23,6 +23,27 @@ const INITIAL: PitchFormData = {
 
 const STEPS = ['Basics', 'The Pitch', 'Economics', 'Team & Exit'];
 
+function Field({ label, id, error, required, hint, children }: {
+  label: string; id: string; error?: string; required?: boolean; hint?: string; children: React.ReactNode;
+}) {
+  return (
+    <div>
+      <label htmlFor={id} className="label-text flex items-center gap-1">
+        {label}
+        {required && <span className="text-sky-400">*</span>}
+        {hint && <span className="text-zinc-600 normal-case font-normal ml-1">({hint})</span>}
+      </label>
+      {children}
+      {error && (
+        <p className="text-xs text-red-400 mt-1 flex items-center gap-1">
+          <AlertCircle className="w-3 h-3" />
+          {error}
+        </p>
+      )}
+    </div>
+  );
+}
+
 export default function StructuredPitchForm({ onSubmit, isSubmitting }: Props) {
   const [step, setStep] = useState(0);
   const [data, setData] = useState<PitchFormData>(INITIAL);
@@ -33,19 +54,16 @@ export default function StructuredPitchForm({ onSubmit, isSubmitting }: Props) {
     if (errors[key]) setErrors((e) => { const n = { ...e }; delete n[key]; return n; });
   }
 
-
   function setNested<K extends 'unitEconomics' | 'team' | 'financials'>(
     parent: K, key: string, value: unknown,
   ) {
     setData((prev) => ({ ...prev, [parent]: { ...prev[parent], [key]: value } }));
   }
 
-
   function numOrNull(val: string): number | null {
     const n = parseFloat(val);
     return isNaN(n) ? null : n;
   }
-
 
   function validateStep(): boolean {
     const errs: Record<string, string> = {};
@@ -75,7 +93,6 @@ export default function StructuredPitchForm({ onSubmit, isSubmitting }: Props) {
     return Object.keys(errs).length === 0;
   }
 
-
   function handleNext() {
     if (!validateStep()) return;
     if (step === STEPS.length - 1) {
@@ -85,25 +102,6 @@ export default function StructuredPitchForm({ onSubmit, isSubmitting }: Props) {
       setStep((s) => s + 1);
     }
   }
-
-  const Field = ({ label, id, error, required, hint, children }: {
-    label: string; id: string; error?: string; required?: boolean; hint?: string; children: React.ReactNode;
-  }) => (
-    <div>
-      <label htmlFor={id} className="label-text flex items-center gap-1">
-        {label}
-        {required && <span className="text-sky-400">*</span>}
-        {hint && <span className="text-zinc-600 normal-case font-normal ml-1">({hint})</span>}
-      </label>
-      {children}
-      {error && (
-        <p className="text-xs text-red-400 mt-1 flex items-center gap-1">
-          <AlertCircle className="w-3 h-3" />
-          {error}
-        </p>
-      )}
-    </div>
-  );
 
   return (
     <div className="glass-card p-6">

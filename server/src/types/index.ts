@@ -1,4 +1,4 @@
-// Core domain types for Shark Tank Simulator
+// Core domain types for the Shark Tank Simulator
 
 export interface StartupPitch {
   id: string;
@@ -10,7 +10,7 @@ export interface StartupPitch {
   equityOffered: number;
   impliedValuation: number;
 
-  // 12 Core Factors
+  // The 12 core startup evaluation factors
   problem: string;
   marketSize: string;
   solution: string;
@@ -24,7 +24,6 @@ export interface StartupPitch {
   financials: FinancialInfo;
   exitPotential: string;
 
-  // Optional supplementary text
   additionalContext?: string;
   pitchDeckText?: string;
 }
@@ -98,6 +97,15 @@ export interface SessionState {
   updatedAt: number;
 }
 
+export interface BusinessReview {
+  summary: string;
+  estimatedValue: number;
+  valuationReasoning: string;
+  strengths: string[];
+  improvements: string[];
+  nextSteps: string[];
+}
+
 export interface FinalDeal {
   status: 'deal' | 'no-deal';
   shark?: SharkId;
@@ -105,6 +113,7 @@ export interface FinalDeal {
   equity?: number;
   valuation?: number;
   memo: string;
+  review: BusinessReview;
   scores: Record<string, number>;
   overallScore: number;
   verdict: string;

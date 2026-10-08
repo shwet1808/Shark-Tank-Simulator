@@ -1,6 +1,6 @@
 import { Router, Request, Response, NextFunction } from 'express';
 import { sessionStore } from '../services/sessionStore.js';
-import { generateSharkAnalysis, generateDealOffer, generateFinalMemo } from '../services/openai.js';
+import { generateSharkAnalysis, generateDealOffer, generateFinalMemo, generateBusinessReview } from '../services/openai.js';
 import { analyzePitch, computeOverallScore } from '../services/pitchAnalyzer.js';
 import { SharkId, SharkMessage, SessionState, FinalDeal } from '../types/index.js';
 import { v4 as uuidv4 } from 'uuid';
@@ -31,19 +31,11 @@ async function runSharkPhase(
   sendSSE(res, 'phase_change', { phase });
 
   for (const sharkId of SHARK_ORDER) {
-    try {
-      const message = await generateSharkAnalysis(session.pitch, sharkId, phase, session.messages);
-      session.messages.push(message);
-      sessionStore.update(session.id, { messages: session.messages, sharkMoods: { ...session.sharkMoods, [sharkId]: message.mood } });
-      sendSSE(res, 'shark_message', message);
-      await new Promise((r) => setTimeout(r, 600)); // pacing between sharks
-    } catch (err) {
-      console.error(`Shark ${sharkId} failed in phase ${phase}:`, err);
-      sendSSE(res, 'shark_message', {
-        id: uuidv4(), sharkId, sharkName: sharkId, mood: 'neutral',
-        content: '...', timestamp: Date.now(), phase,
-      });
-    }
+    const message = await generateSharkAnalysis(session.pitch, sharkId, phase, session.messages);
+    session.messages.push(message);
+    sessionStore.update(session.id, { messages: session.messages, sharkMoods: { ...session.sharkMoods, [sharkId]: message.mood } });
+    sendSSE(res, 'shark_message', message);
+    await new Promise((r) => setTimeout(r, 600)); // pacing between sharks
   }
 }
 
@@ -88,11 +80,20 @@ router.get('/:id/stream', async (req: Request, res: Response, next: NextFunction
 
     const dealShark = SHARK_ORDER.find((s) => session.sharkMoods[s] === 'interested' || session.sharkMoods[s] === 'intrigued');
     const memo = await generateFinalMemo(session);
+    const review = await generateBusinessReview(session);
+    const dealMessage = dealShark
+      ? session.messages.find((message) => message.sharkId === dealShark && message.offer)
+      : undefined;
+    const acceptedOffer = dealMessage?.offer;
 
     const finalDeal: FinalDeal = {
       status: dealShark ? 'deal' : 'no-deal',
       shark: dealShark,
+      amount: acceptedOffer?.amount,
+      equity: acceptedOffer?.equity,
+      valuation: acceptedOffer?.valuation,
       memo,
+      review,
       scores,
       overallScore,
       verdict: dealShark
@@ -104,7 +105,8 @@ router.get('/:id/stream', async (req: Request, res: Response, next: NextFunction
     sendSSE(res, 'session_complete', { sessionId: session.id, finalDeal });
     res.end();
   } catch (err) {
-    sendSSE(res, 'error', { message: 'Session failed. Please try again.' });
+    const msg = err instanceof Error ? err.message : 'Session failed. Please try again.';
+    sendSSE(res, 'error', { message: msg });
     res.end();
     next(err);
   }

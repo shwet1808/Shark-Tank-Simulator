@@ -45,7 +45,7 @@ app.use(errorHandler);
 app.listen(config.port, () => {
   console.log(`🦈 Shark Tank Server running on http://localhost:${config.port}`);
   console.log(`   Environment: ${config.nodeEnv}`);
-  console.log(`   OpenAI Model: ${config.openai.model}`);
+  console.log(`   AI Model: ${config.ai.model}`);
 });
 
 export default app;
