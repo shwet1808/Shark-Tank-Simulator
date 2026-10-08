@@ -1,0 +1,90 @@
+We are SentinelAI, an AI-powered threat detection platform built specifically for SMBs. The core problem is that small to mid-sized businesses cannot afford dedicated, full-time security operations teams, yet they face skyrocketing rates of ransomware attacks. 
+
+Our solution is a plug-and-play network appliance that uses machine learning to instantly block anomalies at the edge. The TAM is a $15B market in North America alone. 
+
+Traction: We currently have $1.5M in ARR from 300 active enterprise clients. 
+Business Model: We charge a flat $500/month SaaS fee per office location. 
+Unit Economics: Our CAC is $800, and our LTV is over $12,000, giving us incredibly healthy margins of 85%. Our monthly burn rate is only $30,000. 
+
+Competition: We compete against CrowdStrike (which is too expensive for SMBs) and Cisco (which is too complex to set up). Our competitive moat is our proprietary threat-sharing network—when one of our appliances detects a new threat, all devices globally are updated instantly.
+
+Team: Founded by Sarah Jenkins, an ex-NSA cybersecurity analyst with 10 years of network defense experience. 
+Financial Ask: We are asking for $1,500,000 in exchange for 15% equity to scale our direct sales team. 
+Exit Strategy: We anticipate an acquisition by Palo Alto Networks or Cisco within 4-6 years.
+
+
+------------------------------------------------------
+
+STARTUP NAME & TAGLINE
+KindRoot — Plant-based, compostable cleaning products delivered in refillable glass bottles.
+
+PROBLEM STATEMENT
+US households generate 2.5B plastic cleaning bottles annually. 90% of conventional cleaners contain VOCs linked to asthma and endocrine disruption. Eco-friendly options either don't work, cost 3x more, or come in "compostable" packaging that ends up in landfills.
+
+TARGET MARKET SIZE
+TAM: $30B US household cleaning products
+SAM: $6B "green cleaning" segment growing 12% CAGR
+SOM: $120M (millennial urban households, initial 10 cities)
+
+PRODUCT / SOLUTION DESCRIPTION
+A line of 6 concentrated cleaning tablets (kitchen, bath, glass, floor, laundry, multi-surface) that dissolve in tap water inside a permanent glass bottle. Subscribe, get tablets in compostable pouches quarterly. Bottles are designed to look good on a counter (think Method meets Aesop). Refill station partnerships in 40 Whole Foods locations.
+
+TRACTION & CURRENT METRICS
+- $45k MRR, 62% from subscriptions
+- 8,200 active subscribers
+- 2.1 average orders per customer
+- Repeat purchase rate: 58% at 90 days
+- Retail pilot: 40 Whole Foods, $18k/mo wholesale
+
+BUSINESS MODEL & MONETIZATION
+D2C subscription ($24/quarter for 24 tablets) + wholesale to retailers (40% margin) + refill station kiosks (revenue share with retailers).
+
+UNIT ECONOMICS
+CAC: $32 | LTV: $180 | LTV:CAC = 5.6:1 | Gross Margin: 68% | Payback: 2 months
+
+COMPETITION & MOAT
+Competitors: Blueland, Grove Collaborative, Branch Basics. Moat: superior tablet dissolution formula (proprietary surfactant blend, patent pending); premium bottle design creates shelf visibility; refill station exclusivity deals with Whole Foods.
+
+FOUNDING TEAM
+CEO: Priya Raman (ex-P&G brand manager, launched 3 cleaning SKUs). COO: Daniel Okafor (ex-Grove Collaborative supply chain). Advisor: Dr. Lisa Chen (environmental toxicologist, UC Berkeley).
+
+FINANCIAL ASK
+$800k for 15% equity (post-money $5.3M)
+
+-------------------------------------------------------------
+
+STARTUP NAME & TAGLINE
+PayLoom — Instant payroll for hourly workers, earned wage access without the predatory fees.
+
+PROBLEM STATEMENT
+78M hourly workers in the US live paycheck to paycheck. When emergencies hit, they turn to payday loans (400% APR) or earned wage access apps that charge $3–$5 per withdrawal — effectively a 300%+ APR. Employers want to help but lack the infrastructure to offer daily pay.
+
+TARGET MARKET SIZE
+TAM: $45B payroll services market
+SAM: $12B earned wage access and payroll advance
+SOM: $400M (initial: 5,000 SMB employers in hospitality/retail)
+
+PRODUCT / SOLUTION DESCRIPTION
+PayLoom integrates with existing payroll providers (ADP, Gusto, Paychex) and lets employees withdraw up to 50% of earned wages any day for a flat $1 fee. Employers pay $2/employee/month. We handle compliance, reconciliation, and float via a warehouse credit facility. Also offers a savings vault ("round up your shift pay") and financial literacy nudges.
+
+TRACTION & CURRENT METRICS
+- $22k MRR (employer subscriptions + withdrawal fees)
+- 85 employer customers, 14,000 active workers
+- $4.2M in wages accessed to date
+- Default rate: 0.8% (we recover from next paycheck)
+- Churn: 4% monthly employer churn
+
+BUSINESS MODEL & MONETIZATION
+Employer SaaS ($2/employee/month) + $1 flat employee withdrawal fee + interchange on PayLoom debit card (30% adoption).
+
+UNIT ECONOMICS
+CAC: $450 (employer) | LTV: $3,600 | LTV:CAC = 8:1 | Gross Margin: 62% | Payback: 5 months
+
+COMPETITION & MOAT
+Competitors: DailyPay, Even, Earnin, Chime. Moat: flat $1 fee is 3x cheaper than competitors; deep payroll integrations (18 providers); no credit checks — we underwrite on employer tenure.
+
+FOUNDING TEAM
+CEO: Marcus Bell (ex-Square payroll, ex-GreenDot). CTO: Anika Patel (ex-Plaid API infrastructure). Head of Compliance: James Whitfield (ex-CFPB).
+
+FINANCIAL ASK
+$2M for 18% equity (post-money $11.1M)

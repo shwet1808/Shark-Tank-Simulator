@@ -1,0 +1,32 @@
+Company Name: GreenSip
+One-line Tagline: Biodegradable coffee pods that actually taste good.
+Industry: Consumer Goods
+Stage: Seed
+Ask Amount ($): 600000
+Equity Offered (%): 10
+
+The Problem: Keurig pods generate millions of tons of plastic waste annually.
+Market Size: $6B single-serve coffee market.
+Product / Solution: Patented seaweed-based pods that dissolve in soil in 4 weeks.
+Traction: $400k lifetime sales, 50% repeat purchase rate.
+Business Model: D2C Subscription box ($20/month).
+
+CAC: 25
+LTV: 80
+Gross Margin: 45
+Burn Rate: 15000
+Runway: 6
+MRR: 20000
+
+Competition: Nespresso, compostable brands that lose flavor.
+Competitive Moat: Utility patent on the flavor-sealing biodegradable membrane.
+Scalability: Production costs drop 30% at 1M units.
+
+Founder Name(s): Mark and Lisa Davis
+Team Background: Material science engineers from MIT.
+Relevant Experience: 10 years working in sustainable plastics.
+
+Revenue ($/yr): 240000
+Revenue Growth: 10% MoM
+Use of Funds: 60% manufacturing tooling, 40% performance marketing.
+Exit Potential: Acquisition by Nestle or Keurig in 5 years.
