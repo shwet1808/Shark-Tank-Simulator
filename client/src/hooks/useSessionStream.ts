@@ -1,4 +1,5 @@
 import { useEffect, useRef } from 'react';
+import { API_BASE } from '../types/constants';
 import { createSessionStream } from '../services/api';
 import { useSessionStore } from '../stores/sessionStore';
 import { SharkMessage, FinalDeal, SharkId } from '../types/index';
@@ -97,7 +98,7 @@ export function useSessionStream(sessionId: string | null) {
       const knownMsg = status ? ERROR_MESSAGES[status] : undefined;
       setError(
         knownMsg ??
-          'Connection to the server was lost. Make sure the backend is running on port 3001.',
+          `Connection to the session stream was lost. Check that the backend at ${API_BASE} is running, CORS_ORIGIN allows this site, and this session still exists.`,
       );
       setStreaming(false);
       es.close();

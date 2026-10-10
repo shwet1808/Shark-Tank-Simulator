@@ -1,32 +1,39 @@
 import dotenv from 'dotenv';
+import { AIProvider } from '../types/index.js';
 
 dotenv.config();
 
-// Validate that a required env var is set, falling back if provided
-function requireEnv(key: string, fallback?: string): string {
-  const value = process.env[key] ?? fallback;
-  if (!value) {
-    throw new Error(`Missing required environment variable: ${key}`);
-  }
-  return value;
+function resolveCorsOrigins(): string[] {
+  const configured = process.env['CORS_ORIGIN']
+    ?.split(',')
+    .map((origin) => origin.trim().replace(/\/+$/, ''))
+    .filter(Boolean);
+
+  if (configured?.length) return configured;
+  if (process.env['NODE_ENV'] !== 'production') return ['http://localhost:5173'];
+
+  throw new Error(
+    'CORS_ORIGIN is required in production. Set it to the Vercel site origin (comma-separate preview origins).',
+  );
 }
 
 export const config = {
-  port: 3000,
+  // Render provides PORT via env — fall back to 3000 for local dev
+  port: parseInt(process.env['PORT'] ?? '3000', 10),
   nodeEnv: process.env['NODE_ENV'] ?? 'development',
   isDev: (process.env['NODE_ENV'] ?? 'development') === 'development',
 
   ai: {
-    openaiKey: process.env['OPENAI_API_KEY'],
+    openaiKey: process.env['OPENAI_API_KEY'] ?? '',
     model: process.env['OPENAI_MODEL'] ?? 'gpt-4o-mini',
-    openRouterKey: process.env['OPENROUTER_API_KEY'],
-    geminiKey: process.env['GEMINI_API_KEY'],
-    strategy: process.env['AI_PROVIDER_STRATEGY'] ?? 'smart_fallback',
+    openRouterKey: process.env['OPENROUTER_API_KEY'] ?? '',
+    geminiKey: process.env['GEMINI_API_KEY'] ?? '',
+    primaryProvider: (process.env['PRIMARY_AI_PROVIDER'] ?? 'openrouter') as AIProvider,
     openRouterModel: process.env['OPENROUTER_MODEL'] ?? 'google/gemini-2.5-flash',
   },
 
   cors: {
-    origin: process.env['CORS_ORIGIN'] ?? '*',
+    origin: resolveCorsOrigins(),
   },
 
   rateLimit: {

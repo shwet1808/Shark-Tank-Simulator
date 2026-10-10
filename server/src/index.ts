@@ -9,7 +9,7 @@ import sessionRouter from './routes/session.js';
 
 const app: express.Express = express();
 
-// Security & parsing
+// Security: Helmet with relaxed CSP (SSE needs inline scripts)
 app.use(
   helmet({
     contentSecurityPolicy: false,
@@ -17,16 +17,25 @@ app.use(
     crossOriginOpenerPolicy: false,
     crossOriginResourcePolicy: false,
     frameguard: false,
-  })
+  }),
 );
-app.use(cors({ origin: config.cors.origin, credentials: true }));
+
+// Only allow configured frontend origins; credentials cannot be used with a wildcard.
+const corsOrigin = config.cors.origin;
+app.use(
+  cors({
+    origin: corsOrigin,
+    credentials: true,
+  }),
+);
+
 app.use(express.json({ limit: '2mb' }));
 app.use(express.urlencoded({ extended: true }));
 
-// Logging
+// Request logging in development
 if (config.isDev) app.use(requestLogger);
 
-// Rate limiting
+// Rate limiting on all /api routes
 const limiter = rateLimit({
   windowMs: config.rateLimit.windowMs,
   max: config.rateLimit.max,
@@ -36,24 +45,30 @@ const limiter = rateLimit({
 });
 app.use('/api', limiter);
 
-// Health check
+// Health check endpoint
 app.get('/health', (_req, res) => {
-  res.json({ status: 'ok', timestamp: new Date().toISOString(), env: config.nodeEnv });
+  res.json({
+    status: 'ok',
+    timestamp: new Date().toISOString(),
+    env: config.nodeEnv,
+  });
 });
 
-// Routes
+// API routes
 app.use('/api/pitch', pitchRouter);
 app.use('/api/session', sessionRouter);
 
-// Error handling
+// 404 handler (must come after routes)
 app.use(notFound);
+
+// Global error handler
 app.use(errorHandler);
 
-// Start server
+// Start server — bind to 0.0.0.0 so Render can reach it
 app.listen(config.port, '0.0.0.0', () => {
-  console.log(`🦈 Shark Tank Server running on http://0.0.0.0:${config.port}`);
-  console.log(`   Environment: ${config.nodeEnv}`);
-  console.log(`   AI Model: ${config.ai.model}`);
+  console.log(`Shark Tank Server running on port ${config.port}`);
+  console.log(`Environment: ${config.nodeEnv}`);
+  console.log(`AI Provider order: ${config.ai.primaryProvider} first`);
 });
 
 export default app;

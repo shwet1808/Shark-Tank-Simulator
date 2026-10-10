@@ -237,7 +237,7 @@ graph TD
 
 | Method | Endpoint | Description | Request Payload | Response |
 |--------|----------|-------------|-----------------|----------|
-| `GET` | `/health` | Health probe | None | `{ status: "ok", timestamp }` |
+| `GET` | `/health` | Health probe | None | `{ status: "ok", timestamp, env }` |
 | `POST` | `/api/pitch/submit` | Structured form intake | `PitchSchema` (12 factors) | `{ sessionId, pitchId, analyses, overallScore }` |
 | `POST` | `/api/pitch/text` | Free-text intake | `{ pitchText, companyName, askAmount, equityOffered }` | `{ sessionId, pitchId, message }` |
 | `GET` | `/api/pitch/session/:id` | Session summary | None | `SessionState` JSON |
@@ -277,7 +277,7 @@ $$\text{Overall Score} = \sum_{i=1}^{12} (\text{Factor Score}_i \times \text{Wei
 ## 9. Security & Production Hardening
 
 - **Helmet:** Enforces secure HTTP response headers.
-- **CORS:** Restricts cross-origin requests to configured client origin (`http://localhost:5173`).
+- **CORS:** Localhost is allowed in development; production requires an explicit comma-separated `CORS_ORIGIN` allowlist. Never uses `origin: '*'` with `credentials: true`.
 - **Rate Limiting:** Prevents API spamming with `express-rate-limit` (30 requests/minute per IP).
 - **Zod Schema Validation:** Enforces strict typing and bounds on all incoming JSON payloads before controller execution.
 - **TypeScript Integrity:** Both server and client compile cleanly with zero TypeScript errors under strict type checking.

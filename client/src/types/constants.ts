@@ -69,4 +69,9 @@ export const STAGE_OPTIONS = [
   { value: 'scale', label: 'Scaling' },
 ] as const;
 
-export const API_BASE = '/api';
+// VITE_API_BASE may be either the backend origin or the full /api URL.
+// In dev, the Vite proxy forwards the default /api path to the backend.
+const configuredApiBase = import.meta.env.VITE_API_BASE?.trim().replace(/\/+$/, '');
+export const API_BASE = configuredApiBase
+  ? (/\/api$/i.test(configuredApiBase) ? configuredApiBase : `${configuredApiBase}/api`)
+  : '/api';

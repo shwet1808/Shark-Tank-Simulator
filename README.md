@@ -109,34 +109,92 @@ cd ..
 ```
 
 ### 3. Environment Configuration
-Create or edit `server/.env`:
+
+#### Server (`server/.env`)
 ```env
-PORT=3001
+PORT=3000
 NODE_ENV=development
-
-# Gemini API Configuration (Default / Recommended)
-GEMINI_API_KEY=your_gemini_api_key_here
-GEMINI_MODEL=gemini-flash-lite-latest
-
-# OpenRouter (Optional backup)
-OPENROUTER_API_KEY=your_openrouter_key_here
-OPENROUTER_MODEL=meta-llama/llama-3.2-3b-instruct:free
-
-# AI Provider Strategy
 PRIMARY_AI_PROVIDER=gemini
-AI_PROVIDER_STRATEGY=smart_fallback
 
+# API Keys — one or more is required for AI-powered responses.
+# If none are set, the system falls back to pitch-aware dynamic responses.
+GEMINI_API_KEY=your_gemini_key_here
+OPENROUTER_API_KEY=your_openrouter_key_here
+OPENAI_API_KEY=your_openai_key_here
+
+# Model selection (used when the corresponding provider is active)
+GEMINI_MODEL=gemini-2.0-flash
+OPENROUTER_MODEL=google/gemini-2.5-flash
+
+# CORS — set to your frontend's URL in production (e.g., https://your-app.vercel.app)
 CORS_ORIGIN=http://localhost:5173
 ```
+
+#### Client (`client/.env`)
+```env
+# Production: point this at your Render backend URL.
+# Leave empty in dev — the Vite proxy forwards /api to localhost:3000.
+VITE_API_BASE=
+```
+
+> See `server/.env.example` and `client/.env.example` for full details.
 
 ### 4. Running the Application
 From the root directory:
 ```bash
-# Run both Backend & Frontend simultaneously
+# Run the app with the frontend served by the backend
 npm run dev
 ```
-- **Frontend URL:** [http://localhost:5173](http://localhost:5173)
-- **Backend API:** [http://localhost:3001](http://localhost:3001)
+- **Application URL:** [http://localhost:3000](http://localhost:3000)
+- **Backend health check:** [http://localhost:3000/health](http://localhost:3000/health)
+
+To run the client and API separately, start `npm run dev --workspace=server` and `npm run dev --workspace=client` in separate terminals. The client is then available at `http://localhost:5173` and proxies `/api` to port `3000`.
+
+---
+
+## 🚀 Deployment Guide
+
+The app is designed for deployment as **two independent services**:
+
+| Service | Platform | Build Command | Output Directory |
+|---------|----------|---------------|-----------------|
+| **Backend** | Render | `npm run build --workspace=server` | `server/dist/` |
+| **Frontend** | Vercel | `npm run build --workspace=client` | `client/dist/` |
+
+### Step 1: Deploy the Backend (Render)
+
+1. Create a new **Web Service** on Render and connect your repo.
+2. Set the **Build Command** to: `npm install && npm run build --workspace=server`
+3. Set the **Start Command** to: `node server/dist/index.js`
+4. Add these **Environment Variables** (Project Settings → Environment):
+
+| Variable | Value |
+|----------|-------|
+| `PORT` | *(leave unset — Render assigns this automatically)* |
+| `NODE_ENV` | `production` |
+| `CORS_ORIGIN` | `https://your-app.vercel.app` |
+| `PRIMARY_AI_PROVIDER` | `gemini` (or `openrouter` or `openai`) |
+| `GEMINI_API_KEY` | `your-gemini-api-key` |
+| `OPENROUTER_API_KEY` | `your-openrouter-key` *(optional backup)* |
+| `OPENAI_API_KEY` | `your-openai-key` *(optional backup)* |
+
+### Step 2: Deploy the Frontend (Vercel)
+
+1. Create a new **Project** on Vercel and connect your repo.
+2. Set the **Root Directory** to `client`.
+3. Set the **Build Command** to: `npm install && npm run build`
+4. Set the **Output Directory** to: `dist`
+5. Add this **Environment Variable** (Project Settings → Environment Variables):
+
+| Variable | Value | Example |
+|----------|-------|---------|
+| `VITE_API_BASE` | *Your Render backend URL (origin or `/api` URL)* | `https://shark-tank-api.onrender.com` |
+
+### Step 3: Redeploy
+
+After setting all variables, trigger a fresh deploy of **both** services. Vite embeds `VITE_API_BASE` into the frontend at build time, and the client appends `/api` when you provide only the backend origin. The Vite proxy is for local development only; it does not run on Vercel. `client/vercel.json` configures the SPA fallback so direct visits and refreshes on app routes work.
+
+> **Troubleshooting**: Set `CORS_ORIGIN` on Render to the exact Vercel site origin (include `https://`, no path or trailing slash). For preview deployments, separate each allowed origin with a comma. Check `https://your-backend.onrender.com/health` to verify the backend is reachable. Redeploy the Vercel frontend after changing `VITE_API_BASE`.
 
 ---
 

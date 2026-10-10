@@ -1,5 +1,8 @@
 // Core domain types for the Shark Tank Simulator
 
+// AI provider identifiers for the failover router
+export type AIProvider = 'openrouter' | 'gemini' | 'openai';
+
 export interface StartupPitch {
   id: string;
   companyName: string;
